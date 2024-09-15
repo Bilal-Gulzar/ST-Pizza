@@ -97,7 +97,7 @@ fetch("/api/MenuItemEndpoint")
                       <p className=" line-clamp-3 font-sans mb-3 text-sm text-gray-600 font-medium">
                         {item.description}
                       </p>
-                      <div className="flex items-center justify-center sm:justify-start  gap-5 ">
+                      <div className="relative flex items-center justify-center sm:justify-start  gap-5 ">
                           <div
                             onClick={() => handleAddToCartButtonClick(item)}
                             className="cursor-pointer w-full  px-2  h-10 rounded-full  flex justify-center items-center bg-[#f8341e] font-sans font-bold text-white outline-none"
@@ -106,7 +106,7 @@ fetch("/api/MenuItemEndpoint")
                             item.extraIngregdientPrices.length > 0 ?
                               <span className='line-clamp-1'>Add to cart (from ${item.basePrice})</span>
                              :
-                        <FlyingButton  src={item.img} targetTop={'10%'} targetLeft={'84%'}>
+                        <FlyingButton src={item.img} targetTop={'8%'} targetLeft={'84%'}>
                               <span className='line-clamp-1'>Add to cart ${item.basePrice}</span>
                         </FlyingButton>
 }

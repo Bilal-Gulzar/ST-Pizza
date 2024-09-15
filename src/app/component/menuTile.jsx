@@ -132,7 +132,7 @@ setShowPopup(false)
                     }}
                     className="cursor-pointer py-1.5 min-h-10 rounded-lg  flex justify-center items-center bg-[#f8341e] font-sans font-bold text-white outline-none text-lg"
                   >
-                <FlyingButton src={onToCart.img} targetTop={'10%'} targetLeft={'84%'}>
+                  <FlyingButton src={onToCart.img} targetTop={'8%'} targetLeft={'84%'}>
                     Add to cart ${selectPrice}
                         </FlyingButton>
                   </div>
