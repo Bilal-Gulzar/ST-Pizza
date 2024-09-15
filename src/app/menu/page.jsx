@@ -26,8 +26,6 @@ setShowPopup(true)
 
 addTOCart(item);
 setShowPopup(false);
-
-  // console.log(hasOption);
   
 }
 

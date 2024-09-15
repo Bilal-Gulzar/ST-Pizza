@@ -5,7 +5,6 @@ import { AppWrapper } from "./context/contextApi";
 import toast, { Toaster } from "react-hot-toast";
 import NextTopLoader from "nextjs-toploader";
 import Footer from "./component/footer";
-import Link from "next/link";
 
 const roboto = Roboto({ subsets: ["latin"],weight:["400", "500", "700", "900"] });
 
