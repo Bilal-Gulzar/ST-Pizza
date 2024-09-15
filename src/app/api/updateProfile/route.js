@@ -1,6 +1,5 @@
 import dbConnect from "@/app/middleWare/mongoose";
 import user from "@/app/models/user";
-import { imageOptimizer } from "next/dist/server/image-optimizer";
 var jwt = require("jsonwebtoken");
 
 
