@@ -1,6 +1,6 @@
 "use client"
 import React from 'react';
-import Tabs from '@/app/component/tabs';
+import Tabs from '../../component/tabs';
 import { usePathname,useRouter,redirect} from "next/navigation";
 import toast, { Toaster } from "react-hot-toast";
 import { useEffect, useState} from 'react';

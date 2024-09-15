@@ -8,7 +8,6 @@ import Tabs from '../component/tabs';
 import TabsForNotAdmin from '../component/tabsForNotAdmin';
 import toast, { Toaster } from "react-hot-toast";
 import { usePathname } from 'next/navigation';
-import { format } from 'crypto-js';
 
 export default function Profile(){
  const Pathname = usePathname()

@@ -1,5 +1,5 @@
-import menuItem from "@/app/models/menuItem";
-import dbConnect from "@/app/middleWare/mongoose";
+import menuItem from "../../models/menuItem";
+import dbConnect from "../../middleWare/mongoose";
 
 export  const  POST = async(req)=>{
 
