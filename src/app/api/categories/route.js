@@ -1,7 +1,7 @@
-import Categories from "@/app/categories/page";
+// import Categories from "@/app/categories/page";
 import dbConnect from "@/app/middleWare/mongoose";
 import categories from "@/app/models/categories";
-import { BiCategory } from "react-icons/bi";
+// import { BiCategory } from "react-icons/bi";
 
 export async function POST(req) {
 
