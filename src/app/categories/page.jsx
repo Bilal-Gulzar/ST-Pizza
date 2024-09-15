@@ -170,9 +170,10 @@ const foucus = () => {
               />
             </div>
             <button
+              disabled={newCategory.length ===0}
               onClick={handleSub}
               // type="submit"
-              className="bg-[#f8341e] mt-9 sm:mt-6 text-white w-[70px] sm:w-[85px] py-2.5 sm:py-2 rounded-lg  flex justify-center items-center   text-sm sm:text-base font-sans font-bold  outline-none"
+              className="bg-[#f8341e] mt-9 cursor-pointer sm:mt-6 text-white w-[70px] sm:w-[85px] py-2.5 sm:py-2 rounded-lg  flex justify-center items-center   text-sm sm:text-base font-sans font-bold  outline-none"
             >
               {editCategory ? "Update" : "Create"}
             </button>
