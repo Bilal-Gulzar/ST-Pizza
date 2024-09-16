@@ -1,3 +1,70 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+/* .no-scrollbar::-webkit-scrollbar{
+
+display:none;
+
+}
+
+.no-scrollbar{
+
+-ms-overflow-style:none;
+scrollbar-width: none;
+
+} */
+
+
+
+   /* chat Gpt code */
+/* In styles/globals.css or a CSS module */
+/* .hide-scrollbar {
+  overflow: auto; /* Enable scrolling */
+/* } */ 
+
+/* Hide scrollbar for WebKit browsers */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for Firefox */
+.hide-scrollbar {
+  scrollbar-width: none;
+}
+
+/* Hide scrollbar for Internet Explorer and Edge */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* In styles/globals.css or a CSS module */
+/* .hide-scrollbar {
+  overflow: auto; /* Enable scrolling */
+/* } */
+
+/* Hide scrollbar for WebKit browsers */
+/* .hide-scrollbar::-webkit-scrollbar {
+  display: none;
+} */
+
+/* Hide scrollbar for Firefox */
+/* .hide-scrollbar {
+  scrollbar-width: none;
+} */
+
+/* Hide scrollbar for Internet Explorer and Edge */
+/* .hide-scrollbar {
+  -ms-overflow-style: none;
+}  */

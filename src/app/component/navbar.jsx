@@ -26,12 +26,14 @@ const removejwt = ()=>{
   }
 
   return (
-    <nav>
-      <div className="max-w-[900px] mx-auto sm:pr-5 lg:pr-0  sticky top-0 md:shadow-none shadow-md ">
-        <div className="flex flex-row justify-between sm:mt-4 font-sans font-bold  ">
+    <nav className=" sticky md:relative bg-white z-30 right-0 left-0 top-0 shadow-md md:shadow-none  ">
+      <div className="max-w-[900px] mx-auto sm:pr-5 lg:pr-0">
+        <div className="flex flex-row justify-between items-center sm:mt-4 font-sans font-bold  ">
           <div className="flex items-center gap-5 ">
             <Link href={"/"}>
-              <h2 className="text-4xl text-[#f8341e] ml-5 lg:ml-0">ST Pizza</h2>
+              <h2 className="text-4xl text-[#f8341e] mt-3 md:mt-0 ml-5 lg:ml-0">
+                ST Pizza
+              </h2>
             </Link>
             <ul className="text-gray-600 md:flex hidden mt-3 gap-4 ">
               <Link href={"/"}>
@@ -87,7 +89,7 @@ const removejwt = ()=>{
               <div className=" relative  pt-2">
                 <HiOutlineShoppingCart className="size-7" />
                 {cartProducts.length > 0 && (
-                  <div className="bg-[#f8341e] w-[22px] absolute h-[22px] flex justify-center items-center top-0 -right-3  text-xs rounded-full">
+                  <div className="bg-[#f8341e] w-[19px] absolute h-[19px] flex justify-center items-center top-0 -right-3  text-[11px] rounded-full">
                     {cartProducts.length}
                   </div>
                 )}
@@ -95,7 +97,7 @@ const removejwt = ()=>{
             </Link>
             {token && (
               <div
-                onMouseOver={() => setNav(true)}
+                onClick={() => setNav(!nav)}
                 className=" sm:hidden mt-2 w-8 h-8 rounded-full  flex justify-center items-center bg-gray-200"
               >
                 <div className="relative w-5 h-5  rounded-full bg-gray-200">
@@ -122,22 +124,48 @@ const removejwt = ()=>{
         </div>
         <div className="w-screen  ">
           <ul className="text-gray-600 font-sans font-bold pb-2 flex md:hidden mt-3 gap-5 justify-center ">
-            <li>Home</li>
-            <li>Menu</li>
-            <li>About</li>
-            <li>Contact</li>
+            <Link href={"/"}>
+              <li className="hover:text-[#f8341e]">Home</li>
+            </Link>
+            <Link href={"/menu"}>
+              <li className="hover:text-[#f8341e]">Menu</li>
+            </Link>
+            <Link href={"/#about-us"}>
+              <li className="hover:text-[#f8341e]">About</li>
+            </Link>
+            <Link href={"/#contact-us"}>
+              <li className="hover:text-[#f8341e]">Contact</li>
+            </Link>
           </ul>
         </div>
         {nav && (
           <div
-          onMouseLeave={()=>{setNav(false)}}
             className={`${
               !token ? "hidden" : ""
-            }  p-7 items-center font-sans rounded  text-[14px] sm:hidden  text-black cursor-pointer shadow-lg font-semibold flex flex-col gap-2 absolute  top-3 right-2 text-sm bg-white`}>
-            <Link href={'/profile'}> <p onClick={() => {setNav(false)}} className='hover:text-[#f8341e]'>Profile</p></Link>
-             <div className='flex items-center gap-1 hover:text-[#f8341e]' onClick={() => {setNav(false), removejwt()}}>
-              <span><BiLogOut className='size-5  hover:text-[#f8341e]'/> </span> LogOut 
-            </div> 
+            }  p-7 items-center font-sans rounded  text-[14px] sm:hidden  text-black cursor-pointer shadow-lg font-semibold flex flex-col gap-2 absolute  top-2 right-[60px] text-sm bg-white`}
+          >
+            <Link href={"/profile"}>
+              {" "}
+              <p
+                onClick={() => {
+                  setNav(false);
+                }}
+                className="hover:text-[#f8341e]"
+              >
+                Profile
+              </p>
+            </Link>
+            <div
+              className="flex items-center gap-1 hover:text-[#f8341e]"
+              onClick={() => {
+                setNav(false), removejwt();
+              }}
+            >
+              <span>
+                <BiLogOut className="size-5  hover:text-[#f8341e]" />{" "}
+              </span>{" "}
+              LogOut
+            </div>
           </div>
         )}
       </div>

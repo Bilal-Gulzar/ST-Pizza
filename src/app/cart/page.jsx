@@ -108,14 +108,14 @@ if(window.location.href.includes('canceled=1')){
             </h2>
           )}
           {cartProducts?.length > 0 && (
-            <div className=" grid md:grid-cols-2  mt-12 gap-9 px-10  lg:px-0">
+            <div className=" grid md:grid-cols-2  mt-12 gap-9 px-4 sm:px-10  lg:px-0">
               <div>
                 {cartProducts?.length > 0 &&
                   cartProducts.map((item, index) => (
                     <div key={index} className="ml-0">
                       <div className="flex justify-between pr-4 gap-2 items-center py-4 border-gray-200 border-b ">
                         <div className="flex items-center gap-2">
-                          <div className="w-[80px] relative  mx-auto h-20 mb-3">
+                          <div className="min-w-[80px] max-w-[80px] relative  mx-auto h-20 mb-3">
                             <Image
                               src={item.img}
                               alt={item.ItemName}
@@ -126,8 +126,10 @@ if(window.location.href.includes('canceled=1')){
                               priority
                             />
                           </div>
-                          <div className="font-sans text-sm">
-                            <p className="text-lg font-bold">{item.ItemName}</p>
+                          <div className="font-sans text-sm break-all pr-3 sm:pr-7">
+                            {/* <div> */}
+                            <p className="text-lg font-bold ">{item.ItemName}</p>
+                            {/* </div> */}
                             {item.size && (
                               <p className="font-medium  text-gray-900">
                                 Size: <span>{item.size?.name}</span>
@@ -312,7 +314,7 @@ if(window.location.href.includes('canceled=1')){
             </div>
           )}
           {cartProducts?.length > 0 && (
-            <div className="md:hidden mt-5 mb-20  flex flex-col md:items-center md:pr-64 items-end pr-14 ">
+            <div className="md:hidden mt-5 mb-20  flex flex-col md:items-center md:pr-64 items-end pr-11 ">
               <div>
                 <div>
                   <p className="text-gray-500 font-semibold font-sans ">

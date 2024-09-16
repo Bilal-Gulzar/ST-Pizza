@@ -43,16 +43,14 @@ await new Promise(resolve => setTimeout(resolve,1000))
 setShowPopup(false)
 }
 
-
-
   return (
     <>
       {showPopup && (
         <div className="max-w-[900px]">
-          <div className="bg-black/80 flex  justify-center inset-0 fixed ">
-            <div className="w-[75vw] sm:w-[24rem] rounded-lg   my-14  sm:mt-9 sm:mb-5 lg:w-[27rem] flex  px-3 h-auto bg-white">
-              <div className="overflow-y-auto flex-col gap-6 flex pb-3  px-3 pt-7">
-                <div className="w-[150px] sm:w-[170px] lg:w-[280px] md:w-[150px] mx-auto relative min-h-40 lg:min-h-56">
+          <div className="bg-black/80 flex z-50  justify-center inset-0 fixed ">
+            <div className="w-[75vw] sm:w-[24rem] rounded-lg   my-14  sm:mt-9 sm:mb-5 lg:w-[25rem] flex px-0.5 sm:px-3 h-auto bg-white">
+              <div className="overflow-y-auto hide-scrollbar  flex-col gap-6 flex pb-3  px-3 pt-7">
+                <div className="w-[175px] sm:w-[210px]  lg:w-[280px]  mx-auto relative min-h-40 lg:min-h-56">
                   <Image
                     src={onToCart?.img}
                     fill
@@ -132,9 +130,13 @@ setShowPopup(false)
                     }}
                     className="cursor-pointer py-1.5 min-h-10 rounded-lg  flex justify-center items-center bg-[#f8341e] font-sans font-bold text-white outline-none text-lg"
                   >
-                  <FlyingButton src={onToCart.img} targetTop={'8%'} targetLeft={'84%'}>
-                    Add to cart ${selectPrice}
-                        </FlyingButton>
+                    <FlyingButton
+                      src={onToCart.img}
+                      targetTop={"8%"}
+                      targetLeft={"84%"}
+                    >
+                      Add to cart ${selectPrice}
+                    </FlyingButton>
                   </div>
 
                   <div

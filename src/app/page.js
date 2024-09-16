@@ -36,17 +36,17 @@ useEffect(() => {
     <main className="w-full">
       <div className="max-w-[900px] pb-12 mx-auto mt-8 ">
         <div className="grid sm:grid-cols-[50%_auto] mx-auto pt-8">
-          <div className="mt-6 sm:order-1 order-2">
+          <div className=" -mt-6 sm:mt-6 ">
             <h1 className="font-sans sm:block hidden font-bold text-5xl sm:ml-5 lg:ml-0 ">
               Everything
               <br /> is better <br /> with{" "}
               <span className="text-[#f8341e]">Pizza</span>
             </h1>
-            <h1 className="text-center font-sans mx-8 sm:hidden font-bold text-5xl ">
+            <h1 className="text-center font-sans mx-2 sm:hidden font-bold text-5xl ">
               Everything is better with{" "}
               <span className="text-[#f8341e]">Pizza</span>
             </h1>
-            <p className="font-sans sm:ml-5 lg:ml-0  sm:text-start text-center mx-8 sm:mx-0 font-medium text-sm break-words pr-12 mt-5 text-gray-600">
+            <p className="font-sans sm:ml-5 lg:ml-0  sm:text-start text-center  sm:mx-0 font-medium text-sm break-words mx-2 sm:pr-12 mt-7 sm:mt-5 text-gray-600">
               Pizza is the missing piece that makes every day complete, a simple
               yet delicious joy in life
             </p>
@@ -65,7 +65,7 @@ useEffect(() => {
               </div>
             </div>
           </div>
-          <div className="relative mx-auto sm:mx-0 sm:order-2 order-1">
+          <div className="relative mx-auto sm:block hidden sm:mx-0">
             <Image
               src="/pizza.png"
               alt="pizza"
@@ -85,7 +85,7 @@ useEffect(() => {
             {menuItem.map((v) => (
               <div key={v._id} className="p-4 lg:w-1/3">
                 <div className="h-full bg-gray-200 hover:bg-white hover:shadow-lg cursor-pointer px-8 pt-8 pb-5 rounded-lg overflow-hidden text-center relative">
-                  <div className="w-[150px]  mx-auto h-24 mb-3">
+                  <div className="w-[170px] md:w-[150px]  mx-auto h-24 mb-3">
                     <Image
                       src={v.img}
                       alt={v.ItemName}
@@ -104,11 +104,11 @@ useEffect(() => {
                     {v.description}
                   </p>
                   <div className="flex  items-center justify-center sm:justify-start  gap-5 ">
-                      <button className="w-full gap-2 h-10 rounded-full  flex justify-center items-center bg-[#f8341e] font-sans font-bold text-white outline-none">
-                    <Link href='/menu' className="line-clamp-1 px-2">
+                    <button className="w-full gap-2 h-10 rounded-full  flex justify-center items-center bg-[#f8341e] font-sans font-bold text-white outline-none transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300 ... ">
+                      <Link href="/menu" className="line-clamp-1 px-2">
                         Add to cart ${v.basePrice}
-                    </Link>
-                      </button>
+                      </Link>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -187,7 +187,7 @@ useEffect(() => {
             Contact us
           </h3>
           <h3 className="text-2xl underline font-bold text-gray-600 mb-28">
-            +92 349 025 0746
+            <a href="tel:+923490250746">+92 349 025 0746</a>
           </h3>
         </div>
       </div>

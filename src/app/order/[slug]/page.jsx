@@ -75,14 +75,14 @@ for (const price of cartProducts){
               ""
             )}
           </div>
-          <div className=" grid   md:grid-cols-[55%_auto]  mt-12 gap-7 sm:gap-14 px-10  lg:px-0">
+          <div className=" grid   md:grid-cols-[55%_auto]  mt-12 gap-7 sm:gap-14 px-5 sm:px-10  lg:px-0">
             <div>
               {orders.cartProducts?.length > 0 &&
                 orders.cartProducts.map((item, index) => (
                   <div key={index} className="ml-0">
                     <div className="flex justify-between pr-4 gap-2 items-center py-4 border-gray-200 border-b ">
                       <div className="flex items-center gap-2">
-                        <div className="w-[80px] relative  mx-auto h-20 mb-3">
+                        <div className="min-w-[80px] max-w-[80px] relative  mx-auto h-20 mb-3">
                           <Image
                             src={item.img}
                             alt={item.ItemName}
@@ -93,7 +93,7 @@ for (const price of cartProducts){
                             priority
                           />
                         </div>
-                        <div className="font-sans text-sm">
+                        <div className="font-sans text-sm break-all pr-3 sm:pr-7">
                           <p className="text-lg font-bold">{item.ItemName}</p>
                           {item.size && (
                             <p className="font-medium  text-gray-900">
@@ -257,7 +257,7 @@ for (const price of cartProducts){
             </div>
           </div>
           {orders?.cartProducts?.length > 0 && (
-            <div className="md:hidden mt-5 mb-20  flex flex-col md:items-center md:pr-44 items-end pr-14 ">
+            <div className="md:hidden mt-5 mb-20  flex flex-col md:items-center items-end pr-11 ">
               <div>
                 <div>
                   <p className="text-gray-500 font-semibold font-sans ">

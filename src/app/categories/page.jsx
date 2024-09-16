@@ -154,7 +154,7 @@ const foucus = () => {
               >
                 {editCategory ? "Update category: " : "New category name"}
                 {editCategory && (
-                  <span className="font-medium text-black ">{newCategory}</span>
+                  <span className="font-medium text-black sm:block hidden ">{newCategory}</span>
                 )}
               </label>
               <input
@@ -197,7 +197,7 @@ const foucus = () => {
                   key={v._id}
                   className="flex w-full items-center justify-between rounded-lg border py-2 px-4 shadow-sm  border-gray-300 bg-gray-100 sm:text-sm sm:leading-6 outline-none "
                 >
-                  <p className=" font-bold text-base font-sans text-gray-900">
+                  <p className=" font-bold line-clamp-1 text-base font-sans text-gray-900">
                     {v.name}
                   </p>
                   <div className="flex gap-2">
