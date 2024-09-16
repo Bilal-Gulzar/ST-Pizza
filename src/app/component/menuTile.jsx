@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Image from 'next/image';
 import { useAppContext } from "../context/contextApi"; 
 import FlyingButton from "react-flying-item";
-import { resolve } from 'styled-jsx/css';
+import toast from "react-hot-toast";
 
 
 export default function MenuTile({onToCart}) {
@@ -39,9 +39,14 @@ for(let item of extraIngre){
 const handleCart = async ()=>{
 let SelectedMenu = {ItemName:onToCart.ItemName,img:onToCart.img,description:onToCart.description,basePrice:selectPrice,_id:onToCart._id}
 addTOCart(SelectedMenu,size,extraIngre)
-await new Promise(resolve => setTimeout(resolve,1000))
+await new Promise(resolve => setTimeout(resolve,1200))
 setShowPopup(false)
 }
+
+// function showAlert() {
+//   toast.success("Added to cart!");
+// }
+
 
   return (
     <>
@@ -128,7 +133,21 @@ setShowPopup(false)
                     onClick={() => {
                       handleCart();
                     }}
-                    className="cursor-pointer py-1.5 min-h-10 rounded-lg  flex justify-center items-center bg-[#f8341e] font-sans font-bold text-white outline-none text-lg"
+                    className="hidden cursor-pointer py-1.5 min-h-10 rounded-lg  md:flex justify-center items-center bg-[#f8341e] font-sans font-bold text-white outline-none text-lg"
+                  >
+                    <FlyingButton
+                      src={onToCart.img}
+                      targetTop={"8%"}
+                      targetLeft={"84%"}
+                    >
+                      Add to cart ${selectPrice}
+                    </FlyingButton>
+                  </div>
+                  <div
+                    onClick={() => {
+                      handleCart();
+                    }}
+                    className="md:hidden  cursor-pointer py-1.5 min-h-10 rounded-lg  flex justify-center items-center bg-[#f8341e] font-sans font-bold text-white outline-none text-lg"
                   >
                     <FlyingButton
                       src={onToCart.img}
