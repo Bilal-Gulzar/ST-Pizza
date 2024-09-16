@@ -43,9 +43,9 @@ await new Promise(resolve => setTimeout(resolve,1200))
 setShowPopup(false)
 }
 
-// function showAlert() {
-//   toast.success("Added to cart!");
-// }
+function showAlert() {
+  toast.success("Added to cart!");
+}
 
 
   return (
@@ -145,7 +145,7 @@ setShowPopup(false)
                   </div>
                   <div
                     onClick={() => {
-                      handleCart();
+                      handleCart(),showAlert();
                     }}
                     className="md:hidden  cursor-pointer py-1.5 min-h-10 rounded-lg  flex justify-center items-center bg-[#f8341e] font-sans font-bold text-white outline-none text-lg"
                   >
