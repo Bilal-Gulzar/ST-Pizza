@@ -39,7 +39,7 @@ for(let item of extraIngre){
 const handleCart = async ()=>{
 let SelectedMenu = {ItemName:onToCart.ItemName,img:onToCart.img,description:onToCart.description,basePrice:selectPrice,_id:onToCart._id}
 addTOCart(SelectedMenu,size,extraIngre)
-await new Promise(resolve => setTimeout(resolve,1200))
+await new Promise(resolve => setTimeout(resolve,1000))
 setShowPopup(false)
 }
 
@@ -53,8 +53,8 @@ function showAlert() {
       {showPopup && (
         <div className="max-w-[900px]">
           <div className="bg-black/80 flex z-50  justify-center inset-0 fixed ">
-            <div className="w-[75vw] sm:w-[24rem] rounded-lg   my-14  sm:mt-9 sm:mb-5 lg:w-[25rem] flex px-0.5 sm:px-3 h-auto bg-white">
-              <div className="overflow-y-auto hide-scrollbar  flex-col gap-6 flex pb-3  px-3 pt-7">
+            <div className=" rounded-lg my-14 sm:mt-9 sm:mb-5 flex px-0.5  h-auto bg-white">
+              <div className="w-[75vw] sm:w-[24rem] lg:w-[25rem] overflow-y-auto hide-scrollbar  flex-col gap-6 flex pb-3  px-3 pt-7">
                 <div className="w-[175px] sm:w-[210px]  lg:w-[280px]  mx-auto relative min-h-40 lg:min-h-56">
                   <Image
                     src={onToCart?.img}
@@ -145,7 +145,7 @@ function showAlert() {
                   </div>
                   <div
                     onClick={() => {
-                      handleCart(),showAlert();
+                      handleCart(), showAlert();
                     }}
                     className="md:hidden  cursor-pointer py-1.5 min-h-10 rounded-lg  flex justify-center items-center bg-[#f8341e] font-sans font-bold text-white outline-none text-lg"
                   >

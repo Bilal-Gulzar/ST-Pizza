@@ -114,7 +114,7 @@ export default function Login() {
             <p className="text-gray-600 font-sans mt-5 font-medium text-sm text-center">
               {" "}
               or{" "}
-              <span className="underline ">SignUp ?</span>
+              <span className="underline ">SignUp?</span>
             </p>
           </div>
           </Link>

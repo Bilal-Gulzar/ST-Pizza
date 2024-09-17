@@ -15,14 +15,10 @@ export default function MenuItems() {
 const [data,setData] = useState([])
 const [isLoading, setIsLoading] = useState(true);
 
- const handleId=(id)=>{
-router.push(`/menuItems/${id}`)
-}
-
 useEffect(()=>{
  fetch("/api/MenuItemEndpoint")
 .then((resp)=>resp.json())
-.then((result)=>{setData(result.menuitems)})
+.then((result)=>{setData(result.menuitems.reverse())})
 if (typeof window !== "undefined") {
   if (localStorage.getItem("token")) {
     let jwtToken = localStorage.getItem("token");
@@ -73,20 +69,26 @@ if (typeof window !== "undefined") {
               </p>
               <div className=" w-full  grid grid-cols-2 gap-3 md:grid-cols-3">
                 {data.map((v, index) => (
-                  <div
-                    onClick={() => handleId(v._id)}
-                    key={index}
-                    className="px-4 bg-gray-200 pt-11 pb-8 flex-col relative justify-center cursor-pointer rounded-lg flex items-center gap-2 "
-                  >
-                    <div className="  w-[130px] sm:w-[170px]  lg:w-[170px] md:w-[150px] relative h-24 mb-3">
-                      <Image src={v.img} fill alt={v.ItemName} sizes="auto" priority />
+                  <Link href={`/menuItems/${v._id}`} key={index}>
+                    <div
+                      className="px-4 bg-gray-200 pt-11 pb-8 flex-col relative justify-center cursor-pointer rounded-lg flex items-center gap-2 "
+                    >
+                      <div className="  w-[130px] sm:w-[170px]  lg:w-[170px] md:w-[150px] relative h-24 mb-3">
+                        <Image
+                          src={v.img}
+                          fill
+                          alt={v.ItemName}
+                          sizes="auto"
+                          priority
+                        />
+                      </div>
+                      <div className="w-full">
+                        <p className="font-sans font-medium  px-2 break-words text-center text-base line-clamp-1">
+                          {v.ItemName}
+                        </p>
+                      </div>
                     </div>
-                    <div className="w-full">
-                      <p className="font-sans font-medium  px-2 break-words text-center text-base line-clamp-1">
-                        {v.ItemName}
-                      </p>
-                    </div>
-                  </div>
+                  </Link>
                 ))}
               </div>
             </div>

@@ -64,7 +64,7 @@ fetch("/api/MenuItemEndpoint")
    }
 
   }
-
+  let a = 0
   return (
     <>
       {isLoading ? (
@@ -78,9 +78,11 @@ fetch("/api/MenuItemEndpoint")
           {categories.length > 0 &&
             categories.map((c) => (
               <div key={c._id} className="mb-11">
+                {menuItem.some(item => item.category === c._id) && (
                 <h1 className="text-4xl font-bold text-[#f8341e] mb-4 text-center">
                   {c.name}
                 </h1>
+                )}
                 <div className="lg:flex lg:flex-wrap lg:-m-4 grid sm:grid-cols-2 gap-0    md:grid-cols-3">
                   {menuItem
                     .filter((m) => m.category === c._id)

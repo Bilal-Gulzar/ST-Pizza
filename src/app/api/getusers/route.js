@@ -5,7 +5,7 @@ export async function GET(req) {
 
     try{
         await dbConnect()
-const usersEmail = await user.find() 
+const usersEmail = await user.find({}) 
 let userdata = []
 for(let item of usersEmail){
     let  emails ={}

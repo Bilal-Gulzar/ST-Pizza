@@ -226,7 +226,7 @@ const foucus = () => {
               ))}
           </div>
           {deleteCategory && (
-            <div className="flex-col bg-black/80 flex inset-0 fixed justify-center  items-center">
+            <div className="flex-col bg-black/80 z-50 flex inset-0 fixed justify-center  items-center">
               <div className=" sm:w-[19rem] lg:w-[20rem] flex flex-col gap-5 p-3 pb-4 rounded-lg bg-white">
                 <p className="text-center text-sm font-medium">
                   are you sure you want to delete this category?

@@ -154,7 +154,45 @@ const removeIngredient = (Ingreindex) => {
 
  const handleImg = async (evt) => {
    const image = evt.target.files?.[0];
-   // if(image.length == 1){
+  if (!image) return;
+  const formData = new FormData();
+  formData.append("size", "auto");
+  formData.append("image_file", image);
+
+  const removingbg = new Promise(async (resolve, reject) => {
+    const respon = await fetch("https://api.remove.bg/v1.0/removebg", {
+      method: "POST",
+      headers: {
+        "X-Api-Key": "6ADX6VwdsUn7EDeuLiMWeLTk", // Replace with your actual API key
+      },
+      body: formData,
+    });
+    if (respon.ok) {
+      const blob = await respon.blob();
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        resolve();
+        // setImg(reader.result)
+        uploadToCloudinary(reader.result);
+      };
+      reader.readAsDataURL(blob);
+    } else {
+      const errorResponse = await respon.json();
+      // setError(errorResponse);
+      console.error("Error:", errorResponse);
+      //  return;
+      reject();
+    }
+  });
+
+  await toast.promise(removingbg, {
+    loading: "removing image background...",
+    success: "removed image background",
+    error: "Error,Sorry...",
+  });
+
+
+ async function uploadToCloudinary(image) {
    const data = new FormData();
    data.append("file", image);
    data.append("upload_preset", "k3jblwbh");
@@ -183,7 +221,9 @@ const removeIngredient = (Ingreindex) => {
      success: img ? "changed image" : "Added image",
      error: "Error,Sorry...",
    });
+  }
  };
+
 
   return (
     <>
