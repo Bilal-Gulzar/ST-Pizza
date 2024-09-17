@@ -142,7 +142,7 @@ const removejwt = ()=>{
           <div
             className={`${
               !token ? "hidden" : ""
-            }  p-7 items-center font-sans rounded  text-[14px] sm:hidden  text-black cursor-pointer shadow-lg font-semibold flex flex-col gap-2 absolute  top-2 right-[60px] text-sm bg-white`}
+            }  p-7 items-center justify-center font-sans rounded  text-[14px] sm:hidden  text-black cursor-pointer shadow-lg font-semibold flex flex-col gap-2 absolute  top-2 right-[60px] text-sm bg-white`}
           >
             <Link href={"/profile"}>
               {" "}
@@ -150,7 +150,7 @@ const removejwt = ()=>{
                 onClick={() => {
                   setNav(false);
                 }}
-                className="hover:text-[#f8341e]"
+                className="hover:text-[#f8341e] text-center"
               >
                 Profile
               </p>
