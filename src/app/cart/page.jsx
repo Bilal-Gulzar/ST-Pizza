@@ -6,7 +6,6 @@ import { HiOutlineTrash } from "react-icons/hi2";
 import { useState,useEffect} from 'react';
 import { useRouter } from 'next/navigation';
 import toast from 'react-hot-toast';
-// import { resolve } from 'styled-jsx/macro';
 
 export default function Cart() {
  const [email, setEmail] = useState("");
