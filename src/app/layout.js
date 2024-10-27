@@ -21,9 +21,6 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <head>
-        <meta name="cryptomus" content="17cb4dec" />
-      </head>
       <body className={`${roboto.className} overflow-x-hidden`}>
         <AppWrapper>
           <Toaster />
