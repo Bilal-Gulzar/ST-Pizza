@@ -52,8 +52,8 @@ function showAlert() {
     <>
       {showPopup && (
         <div className="max-w-[900px]">
-          <div className="bg-black/80 flex z-50  justify-center inset-0 fixed ">
-            <div className=" rounded-lg my-14 sm:mt-9 sm:mb-5 flex px-0.5  h-auto bg-white">
+          <div className="bg-black/80 flex z-50 h-full items-center justify-center inset-0 fixed ">
+            <div className=" rounded-lg my-14 sm:mt-9 sm:mb-5 flex px-0.5  max-h-[550px] bg-white">
               <div className="w-[75vw] sm:w-[24rem] lg:w-[25rem] overflow-y-auto hide-scrollbar  flex-col gap-6 flex pb-3  px-3 pt-7">
                 <div className="w-[175px] sm:w-[210px]  lg:w-[280px]  mx-auto relative min-h-40 lg:min-h-56">
                   <Image
